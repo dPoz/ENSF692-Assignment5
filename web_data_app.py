@@ -1,9 +1,10 @@
 # web_data_app.py
 # June 2024
-# Modified by: STUDENT NAME
+# Modified by: David Pozniak
 #
 # An simple program for demonstrating web applications using Flask and web scraping of data using Beautiful Soup.
-# Detailed specifications are provided via the Assignment 5 README file.
+# 
+# NOTE: I addeed app.run(debug=True) at the bottom, run as a stanfard python script, ie: "python .\web_data_app.py" OR flask --app web_data_app run --debug
 
 
 import pandas as pd     # needed for data manipulation
@@ -82,6 +83,7 @@ def book_data():
 
     # Create a DataFrame using the two lists
     book_data = pd.DataFrame(list(zip(titles, prices)), columns=['Titles','Prices'])    
+    book_data['Sales Prices'] = round(book_data['Prices']*0.75,2)
     print(book_data)        # Print to the terminal as confirmation - only we can see this
 
     # Format and print the DataFrame using the html template provided in the templates subdirectory
@@ -90,5 +92,7 @@ def book_data():
 @app.route("/learn")
 def learn():
     # Return a string the describes one thing you learned in ENSF 692.
-    pass
+    message = "I learned a lot in 692, but would have preferred more, but shorter, assignements that practice all of the topics covered. <br>However, some stand out topics that I learned and practiced were: <br> - list comprehensions / generators, <br> - regular expresion and <br> - practice manipulating panads dataframes."
+    return message
 
+app.run(debug=True)
