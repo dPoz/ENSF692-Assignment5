@@ -4,7 +4,7 @@
 #
 # An simple program for demonstrating web applications using Flask and web scraping of data using Beautiful Soup.
 # 
-# NOTE: I addeed app.run(debug=True) at the bottom, run as a stanfard python script, ie: "python .\web_data_app.py" OR flask --app web_data_app run --debug
+# NOTE: I addeed app.run(debug=True) at the bottom, run as a standard python script, ie: "python .\web_data_app.py" OR flask --app web_data_app run --debug
 
 
 import pandas as pd     # needed for data manipulation
